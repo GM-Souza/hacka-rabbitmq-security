@@ -36,9 +36,9 @@ public class UserService {
     }
 
     public CreateUserResponse getUserById(UUID userId){
-        User entity = userRepository.findById(userId)
+        User user = userRepository.findById(userId)
                 .orElseThrow(() -> new RuntimeException("User not found"));
-        return UserMapper.toResponse(entity);
+        return UserMapper.toResponse(user);
     }
 
     public List<CreateUserResponse> getAllUsers() {
@@ -50,11 +50,6 @@ public class UserService {
     }
 
     public void deleteUserById(UUID userId){
-        boolean userExists = userRepository.existsById(userId);
-        if(userExists){
-            userRepository.deleteById(userId);
-        } else {
-            throw new RuntimeException("User not found");
-        }
+        userRepository.deleteById(userId);
     }
 }

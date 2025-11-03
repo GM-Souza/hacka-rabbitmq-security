@@ -22,19 +22,19 @@ public class UserController {
         return ResponseEntity.ok(newUser);
     }
 
-    @GetMapping
+    @GetMapping("/getUsers")
     public ResponseEntity<List<CreateUserResponse>> getUsers() {
         List<CreateUserResponse> users = userService.getAllUsers();
         return ResponseEntity.ok(users);
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/getUserById/{id}")
     public ResponseEntity<CreateUserResponse> getUserById(@PathVariable UUID id) {
         var user = userService.getUserById(id);
         return ResponseEntity.ok(user);
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/deleteUserById/{id}")
     public ResponseEntity<Void> deleteUserById(@PathVariable UUID id) {
         userService.deleteUserById(id);
         return ResponseEntity.noContent().build();
