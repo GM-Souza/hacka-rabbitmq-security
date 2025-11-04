@@ -1,6 +1,6 @@
 package com.hackathon.application.infra.security;
 
-import com.hackathon.application.entity.User;
+import com.hackathon.application.entity.userEntity.User;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
@@ -16,7 +16,7 @@ import java.time.ZoneOffset;
 @Service
 public class TokenService {
 
-    @Value("${api.security.token.secret}")
+    @Value("${JWT_SECRET}")
     private String secret;
 
     public String generateToken(User user){
