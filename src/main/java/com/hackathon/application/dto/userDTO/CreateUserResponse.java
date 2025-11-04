@@ -1,6 +1,6 @@
 package com.hackathon.application.dto.userDTO;
 
-import com.hackathon.application.entity.UserRole;
+import com.hackathon.application.entity.userEntity.UserRole;
 
 import java.util.UUID;
 

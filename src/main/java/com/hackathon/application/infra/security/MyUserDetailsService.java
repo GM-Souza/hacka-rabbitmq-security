@@ -1,7 +1,7 @@
 package com.hackathon.application.infra.security;
 
-import com.hackathon.application.entity.User;
-import com.hackathon.application.repository.UserRepository;
+import com.hackathon.application.entity.userEntity.User;
+import com.hackathon.application.repository.userRepository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

@@ -1,6 +1,6 @@
 package com.hackathon.application.infra.security;
 
-import com.hackathon.application.repository.UserRepository; // <-- Importe seu UserRepository
+import com.hackathon.application.repository.userRepository.UserRepository;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;

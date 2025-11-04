@@ -1,8 +1,9 @@
 package com.hackathon.application.service;
 
 import com.hackathon.application.dto.userRoleDTO.CreateUserRoleRequest;
-import com.hackathon.application.entity.UserRole;
-import com.hackathon.application.repository.UserRoleRepository;
+import com.hackathon.application.entity.userEntity.UserRole;
+import com.hackathon.application.repository.userRepository.UserRoleRepository;
+import com.hackathon.application.service.userService.UserRoleService;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
