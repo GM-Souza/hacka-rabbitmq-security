@@ -33,13 +33,13 @@ public class SecurityConfig {
                 .sessionManagement(session ->
                         session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/auth/login").permitAll()
+                        .requestMatchers("/auth/login").hasAnyAuthority()
                         .requestMatchers("/users/**").hasAuthority("ADMIN")
                         .requestMatchers("/roles/**").hasAuthority("ADMIN")
                         .anyRequest().authenticated()
 
-                ).addFilterBefore(securityFilter, UsernamePasswordAuthenticationFilter.class)
-
+                )
+                .addFilterBefore(securityFilter, UsernamePasswordAuthenticationFilter.class)
                 .build();
     }
 
