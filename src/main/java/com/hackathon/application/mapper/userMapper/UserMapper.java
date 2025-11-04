@@ -1,8 +1,8 @@
-package com.hackathon.application.mapper;
+package com.hackathon.application.mapper.userMapper;
 
 import com.hackathon.application.dto.userDTO.CreateUserRequest;
 import com.hackathon.application.dto.userDTO.CreateUserResponse;
-import com.hackathon.application.entity.User;
+import com.hackathon.application.entity.userEntity.User;
 
 public class UserMapper {
 

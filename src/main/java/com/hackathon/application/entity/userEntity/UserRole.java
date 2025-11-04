@@ -1,4 +1,4 @@
-package com.hackathon.application.entity;
+package com.hackathon.application.entity.userEntity;
 
 import jakarta.persistence.*;
 import lombok.*;

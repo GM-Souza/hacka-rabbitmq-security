@@ -1,6 +1,6 @@
-package com.hackathon.application.repository;
+package com.hackathon.application.repository.userRepository;
 
-import com.hackathon.application.entity.User;
+import com.hackathon.application.entity.userEntity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

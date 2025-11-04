@@ -1,10 +1,10 @@
-package com.hackathon.application.controller;
+package com.hackathon.application.controller.userController;
 
 import com.hackathon.application.dto.userRoleDTO.CreateUserRoleRequest;
 import com.hackathon.application.dto.userRoleDTO.CreateUserRoleResponse;
-import com.hackathon.application.entity.UserRole;
-import com.hackathon.application.mapper.UserRoleMapper;
-import com.hackathon.application.service.UserRoleService;
+import com.hackathon.application.entity.userEntity.UserRole;
+import com.hackathon.application.mapper.userMapper.UserRoleMapper;
+import com.hackathon.application.service.userService.UserRoleService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

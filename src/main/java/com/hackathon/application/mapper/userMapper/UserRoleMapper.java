@@ -1,8 +1,8 @@
-package com.hackathon.application.mapper;
+package com.hackathon.application.mapper.userMapper;
 
 import com.hackathon.application.dto.userRoleDTO.CreateUserRoleRequest;
 import com.hackathon.application.dto.userRoleDTO.CreateUserRoleResponse;
-import com.hackathon.application.entity.UserRole;
+import com.hackathon.application.entity.userEntity.UserRole;
 
 public class UserRoleMapper {
 

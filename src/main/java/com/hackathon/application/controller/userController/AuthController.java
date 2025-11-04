@@ -1,8 +1,8 @@
-package com.hackathon.application.controller;
+package com.hackathon.application.controller.userController;
 
 import com.hackathon.application.dto.userDTO.LoginRequest;
 import com.hackathon.application.dto.userDTO.LoginResponse;
-import com.hackathon.application.entity.User;
+import com.hackathon.application.entity.userEntity.User;
 import com.hackathon.application.infra.security.TokenService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;

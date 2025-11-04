@@ -1,18 +1,16 @@
-package com.hackathon.application.service;
+package com.hackathon.application.service.userService;
 
 import com.hackathon.application.dto.userDTO.CreateUserRequest;
 import com.hackathon.application.dto.userDTO.CreateUserResponse;
-import com.hackathon.application.entity.User;
-import com.hackathon.application.entity.UserRole;
-import com.hackathon.application.mapper.UserMapper;
-import com.hackathon.application.repository.UserRepository;
-import com.hackathon.application.repository.UserRoleRepository;
+import com.hackathon.application.entity.userEntity.User;
+import com.hackathon.application.entity.userEntity.UserRole;
+import com.hackathon.application.mapper.userMapper.UserMapper;
+import com.hackathon.application.repository.userRepository.UserRepository;
+import com.hackathon.application.repository.userRepository.UserRoleRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import java.util.List;
-import java.util.Objects;
-import java.util.Optional;
 import java.util.UUID;
 import static java.util.stream.Collectors.toList;
 

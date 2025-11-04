@@ -1,8 +1,8 @@
-package com.hackathon.application.controller;
+package com.hackathon.application.controller.userController;
 
 import com.hackathon.application.dto.userDTO.CreateUserRequest;
 import com.hackathon.application.dto.userDTO.CreateUserResponse;
-import com.hackathon.application.service.UserService;
+import com.hackathon.application.service.userService.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

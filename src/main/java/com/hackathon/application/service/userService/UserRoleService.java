@@ -1,10 +1,10 @@
-package com.hackathon.application.service;
+package com.hackathon.application.service.userService;
 
 import com.hackathon.application.dto.userRoleDTO.CreateUserRoleRequest;
 import com.hackathon.application.dto.userRoleDTO.CreateUserRoleResponse;
-import com.hackathon.application.entity.UserRole;
-import com.hackathon.application.mapper.UserRoleMapper;
-import com.hackathon.application.repository.UserRoleRepository;
+import com.hackathon.application.entity.userEntity.UserRole;
+import com.hackathon.application.mapper.userMapper.UserRoleMapper;
+import com.hackathon.application.repository.userRepository.UserRoleRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import java.util.List;
