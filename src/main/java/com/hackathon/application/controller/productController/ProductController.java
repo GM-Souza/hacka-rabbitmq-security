@@ -24,21 +24,21 @@ public class ProductController {
     }
 
 
-    @PostMapping("/update/{id}")
+    @PatchMapping("/update/{id}")
     public ResponseEntity<ProductResponse> updateProduct(@PathVariable Long id, @RequestBody ProductRequest request) {
         ProductResponse updatedProduct = productService.updateProduct(id, request);
 
         return ResponseEntity.ok(updatedProduct);
     }
 
-    @PostMapping("/delete/${id}")
+    @DeleteMapping("/delete/{id}")
     public ResponseEntity<ProductResponse> deleteProduct(@PathVariable Long id) {
         ProductResponse deletedProduct = productService.deleteProductById(id);
 
         return ResponseEntity.ok(deletedProduct);
     }
 
-    @PatchMapping("/getById/{id}")
+    @GetMapping("/getById/{id}")
     public ResponseEntity<ProductResponse> getProductById(@PathVariable Long id) {
         ProductResponse product = productService.getProductById(id);
 
