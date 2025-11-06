@@ -4,13 +4,18 @@ import com.hackathon.application.dto.userDTO.CreateUserRequest;
 import com.hackathon.application.dto.userDTO.CreateUserResponse;
 import com.hackathon.application.entity.userEntity.User;
 import com.hackathon.application.entity.userEntity.UserRole;
+import com.hackathon.application.exception.RoleNotFoundException;
+import com.hackathon.application.exception.UserNotFoundException;
 import com.hackathon.application.mapper.userMapper.UserMapper;
 import com.hackathon.application.repository.userRepository.UserRepository;
 import com.hackathon.application.repository.userRepository.UserRoleRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+
+import javax.management.relation.Role;
 import java.util.List;
+import java.util.Objects;
 import java.util.UUID;
 import static java.util.stream.Collectors.toList;
 
@@ -22,11 +27,15 @@ public class UserService {
     private final PasswordEncoder passwordEncoder;
 
     public CreateUserResponse createUser(CreateUserRequest createUserRequestDTO) {
+        if(Objects.isNull(createUserRequestDTO)){
+            throw new IllegalArgumentException("Há campos obrigatórios não preenchidos");
+        }
+
         User user = UserMapper.map(createUserRequestDTO);
         user.setPassword(passwordEncoder.encode(createUserRequestDTO.password()));
 
         UserRole role = userRoleRepository.findByName(createUserRequestDTO.role())
-                .orElseThrow(() -> new RuntimeException("Role not found"));
+                .orElseThrow(() -> new RoleNotFoundException("Cargo não encontrado"));
         user.setRole(role);
 
         userRepository.save(user);
@@ -35,7 +44,7 @@ public class UserService {
 
     public CreateUserResponse getUserById(UUID userId){
         User user = userRepository.findById(userId)
-                .orElseThrow(() -> new RuntimeException("User not found"));
+                .orElseThrow(() -> new UserNotFoundException("Usuário não encontrado"));
         return UserMapper.toResponse(user);
     }
 
